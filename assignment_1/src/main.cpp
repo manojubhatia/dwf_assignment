@@ -66,6 +66,10 @@ int main() {
             std::cout << "Count of '" << word << "': " << count << " in " << timeTaken << " ms" << std::endl;
         }
 
+        // Test remove functionality.
+        hash_table.remove("london");
+        hash_table.get("london");
+
     } catch (const exception& e) {
         cerr << e.what() << endl;
     }
