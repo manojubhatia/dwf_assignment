@@ -106,4 +106,3 @@ Since these two operations are sequential, the O(n+m)
 3. I don't mention that we could make a micro-service out of this, since we're talking of O(1) complexity, so time is of essence.
 4. Some test-scoped functions could be added, to check how much time is lost in hashing and what exactly is the retrieval time.
 5. The results show retrieval to the order of fraction of a microsecond.
-6. 
