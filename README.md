@@ -31,9 +31,14 @@ The first assignment involves creating a fixed-sized hash table using **linear p
 - **Efficient Word Extraction**: A cleaning function removes non-alphanumeric characters and extracts words from the text corpus.
 
 ### How to Run:
-1. Compile the program using the provided `Makefile`.
-2. Run the program to download "A Tale of Two Cities" from Project Gutenberg, extract words, and populate the hash table.
-3. Performance results for word retrievals are displayed, with time taken for each operation.
+1. Install the necessary libraries using the following commands (I have debian based Linux systems, haven't tested it on Windows)
+
+sudo apt update
+sudo apt install libssl-dev libcurl4-openssl-dev
+
+2. Compile the program using the provided `Makefile`.
+3. Run the program to download "A Tale of Two Cities" from Project Gutenberg, extract words, and populate the hash table.
+4. Performance results for word retrievals are displayed, with time taken for each operation.
 
 ---
 
