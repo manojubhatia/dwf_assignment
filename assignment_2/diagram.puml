@@ -1,0 +1,41 @@
+@startuml
+
+' Main Program
+class Main {
+    + main() : int
+}
+
+' Define the classes
+class BinanceAPI {
+    + BinanceAPI(const std::string& baseURL)
+    + std::string getAggregateTrades(const std::string& symbol, int limit = 5)
+    + class APIException : public std::runtime_error
+    + std::string sendGETRequest(const std::string& endpoint)
+}
+
+class TradeParser {
+    + std::vector<Trade> parseTrades(const std::string& jsonResponse)
+}
+
+class Trade {
+    + long long aggregateTradeId
+    + std::string price
+    + std::string quantity
+    + int firstTradeId
+    + int lastTradeId
+    + long long timestamp
+    + bool isBuyerMaker
+}
+
+class PerformanceTimer {
+    + void start()
+    + double stop()
+}
+
+' Relationships
+Main -> BinanceAPI : Uses
+Main -> TradeParser : Uses
+Main -> PerformanceTimer : Uses
+TradeParser -> Trade : Parses
+
+@enduml

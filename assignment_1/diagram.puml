@@ -1,0 +1,56 @@
+@startuml
+
+' Main Program
+class Main {
+    + main() : int
+}
+
+' Define the classes
+class HashTable {
+    - vector<pair<string, int>> table
+    - vector<char> occupied
+    - int first_index
+    - int last_index
+    - int size
+    - int elements_count
+
+    + HashTable(int size)
+    + void insert(const string& key, int value)
+    + void remove(const string& key)
+    + int get(const string& key) const
+    + pair<string, int> get_last() const
+    + pair<string, int> get_first() const
+    + pair<int, int> get_stats() const
+    + void save_to_file(const string& filename) const
+    + bool load_from_file(const string& filename)
+
+    - void resize()
+    - int hash(const string& key, int table_size) const
+    - int linear_probe(int index, int table_size, const vector<char>& table_occupied) const
+}
+
+class PerformanceTimer {
+    - chrono::time_point<chrono::high_resolution_clock> startTime
+    + void start()
+    + double stop()
+}
+
+class TextProcessor {
+    + TextProcessor()
+    + void download_book(const string& url, const string& output_path)
+    + void extract_words(const string& file_path, HashTable& hash_table)
+    + string compute_md5(const string& filename)
+    + bool directory_exists(const string& dir)
+    + void create_directory(const string& dir)
+    + string clean_text(const string& text)
+
+    - static size_t write_data(void* ptr, size_t size, size_t nmemb, FILE* stream)
+}
+
+' Relationships
+TextProcessor -> HashTable : Uses
+Main -> TextProcessor : Uses
+Main -> HashTable : Uses
+Main -> PerformanceTimer : Uses
+
+@enduml
