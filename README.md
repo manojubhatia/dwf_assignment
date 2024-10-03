@@ -32,10 +32,10 @@ The first assignment involves creating a fixed-sized hash table using **linear p
 
 ### How to Run:
 1. Install the necessary libraries using the following commands (I have debian based Linux systems, haven't tested it on Windows)
-
+```bash
 sudo apt update
 sudo apt install libssl-dev libcurl4-openssl-dev
-
+```
 2. Compile the program using the provided `Makefile`.
 3. Run the program to download "A Tale of Two Cities" from Project Gutenberg, extract words, and populate the hash table.
 4. Performance results for word retrievals are displayed, with time taken for each operation.
@@ -96,6 +96,7 @@ make all
 
 # Run the program
 ./bin/binance_api_test
+```
 
 # Algorithmic complexity of parsing
 That's O(n+m) where:
