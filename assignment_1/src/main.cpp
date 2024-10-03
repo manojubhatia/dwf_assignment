@@ -60,7 +60,7 @@ int main() {
 
         // Loop to handle repeated queries for the words in the list
         for (const auto& word : words) {
-            //timer.start();
+            timer.start();
             int count = hash_table.get(word);
             double timeTaken = timer.stop();
             std::cout << "Count of '" << word << "': " << count << " in " << timeTaken << " ms" << std::endl;
